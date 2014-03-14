@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
+ruby "2.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
+
+gem "twitter", "~> 4.8.1"
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -44,11 +47,11 @@ gem "puma"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "dotenv"
+gem "foreman"
+
 gem "slim"
 gem "kaminari"
-
-gem "twitter"
-gem "tweetstream"
 
 group :production do
   gem "exception_notification"
@@ -56,12 +59,7 @@ end
 
 group :test, :development do
   gem "rspec-rails"
-  gem "rb-fsevent"
   gem "factory_girl_rails"
-  gem "capybara"
-  gem "guard-rspec"
-  gem "terminal-notifier-guard"
-  gem "rspec-rails"
 end
 
 group :development do
@@ -73,4 +71,7 @@ group :development do
 end
 
 group :test do
+  gem "guard-rspec"
+  gem "rb-fsevent"
+  gem "terminal-notifier-guard"
 end
