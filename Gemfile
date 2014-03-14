@@ -4,7 +4,8 @@ ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-gem "twitter", "~> 4.8.1"
+gem "twitter"
+gem "tweetstream"
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
