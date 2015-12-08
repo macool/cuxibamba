@@ -1,3 +1,18 @@
 <h1>
-  <%= @list.name %>
+ <%= @list.name %>
 </h1>
+
+<ul>
+  <% @tweets.each do |tweet| %>
+  <li>
+    <strong>id:</strong>
+    <%= tweet.id %>
+    <br>
+    <strong>user:</strong>
+    <%= tweet.user %>
+    <br>
+    <strong>text:</strong>
+    <%= tweet.content %>
+  </li>
+  <% end %>
+</ul>
