@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   def show
     @list = List.find params[:id]
     #@tweets = twitter_client.search("#Carchi").take(10)
-    @tweets = Tweet.all    
+    @posts = @list.microposts    
   end
 
   def create
@@ -19,10 +19,12 @@ class ListsController < ApplicationController
 
     @tweets = twitter_client.search("#{list_params[:name]}").take(10)
     @tweets.each do |tweet|
-      Tweet.create({
-          user: tweet.user.name,
+      Micropost.create({
+          usuario: tweet.user.name,
           content: tweet.text,
-          id_str: tweet.id.to_s
+          id_twitter: tweet.id.to_s,
+          list_id: @list.id
+
       })
     end
      
